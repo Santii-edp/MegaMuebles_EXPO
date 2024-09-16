@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
+import { View, Text, ScrollView, Dimensions, Alert, Image,TouchableOpacity } from "react-native";
+import { icons } from "../../constants";
 
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
@@ -39,6 +40,7 @@ const SignIn = () => {
   };
 
   return (
+
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
         <View
@@ -54,7 +56,7 @@ const SignIn = () => {
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Log in to Aora
+            Inicia Sesion en Aora!
           </Text>
 
           <FormField
@@ -87,7 +89,7 @@ const SignIn = () => {
               href="/sign-up"
               className="text-lg font-psemibold text-secondary"
             >
-              Signup
+              Resgistrate
             </Link>
           </View>
         </View>

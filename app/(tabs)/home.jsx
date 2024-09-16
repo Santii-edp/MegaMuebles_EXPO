@@ -8,13 +8,10 @@ import { getAllPosts, getLatestPosts } from "../../lib/appwrite";
 import { EmptyState, SearchInput, Trending, VideoCard } from "../../components";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
-
-const Home = () => {
+const Inicio = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);
   const { data: latestPosts } = useAppwrite(getLatestPosts);
   const { user } = useGlobalContext();
-
-
 
   const [refreshing, setRefreshing] = useState(false);
 
@@ -23,6 +20,7 @@ const Home = () => {
     await refetch();
     setRefreshing(false);
   };
+
   return (
     <SafeAreaView className="bg-primary">
       <FlatList
@@ -30,6 +28,7 @@ const Home = () => {
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
           <VideoCard
+            videoId={item.$id}
             title={item.title}
             thumbnail={item.thumbnail}
             video={item.video}
@@ -44,14 +43,9 @@ const Home = () => {
                 <Text className="font-pmedium text-sm text-gray-100 text-3xl font-psemibold text-white">
                   Bienvenido!
                 </Text>
-            <Text
-              className="text-2xl font-psemibold text-white"
-              containerStyles="mt-5"
-              titleStyles="text-lg"
-            >
-              {user?.username}
-            </Text>
-
+                <Text className="text-2xl font-psemibold text-white mt-5">
+                  {user?.username}
+                </Text>
               </View>
 
               <View className="mt-1.5">
@@ -76,8 +70,8 @@ const Home = () => {
         )}
         ListEmptyComponent={() => (
           <EmptyState
-            title="No Videos Found"
-            subtitle="No videos created yet"
+            title="No se encontraron Muebles ;("
+            subtitle="No hay Productos creados"
           />
         )}
         refreshControl={
@@ -88,4 +82,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Inicio;

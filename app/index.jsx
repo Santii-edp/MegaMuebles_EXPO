@@ -38,7 +38,7 @@ const Welcome = () => {
             <Text className="text-3xl text-white font-bold text-center">
               Discover Endless{"\n"}
               Possibilities with{" "}
-              <Text className="text-secondary-200">Megamuebles</Text>
+              <Text className="text-secondary-200">MegaMuebles!</Text>
             </Text>
 
             <Image
@@ -53,8 +53,8 @@ const Welcome = () => {
           </Text>
 
           <CustomButton
-            title="Continue with Email"
-            handlePress={() => router.push("/sign-in")}
+            title="Continuar con email"
+            handlePress={() => router.push("/home")}
             containerStyles="w-full mt-7"
           />
         </View>

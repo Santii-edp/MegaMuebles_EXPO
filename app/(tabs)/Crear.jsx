@@ -73,7 +73,7 @@ const Create = () => {
         userId: user.$id,
       });
 
-      Alert.alert("Muy bien :D", "Post agregado correctamente");
+      Alert.alert("Muy bien :D", "Mueble agregado correctamente");
       router.push("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
@@ -92,21 +92,19 @@ const Create = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView className="px-4 my-6">
-        <Text className="text-2xl text-white font-psemibold">
-          Publicar producto
-        </Text>
+        <Text className="text-2xl text-white font-psemibold">Subir video</Text>
 
         <FormField
-          title="Nombre del Mueble"
+          title="Título del Mueble"
           value={form.title}
-          placeholder="Nombre del producto"
+          placeholder="Dele a tu Mueble un título atractivo..."
           handleChangeText={(e) => setForm({ ...form, title: e })}
           otherStyles="mt-10"
         />
 
         <View className="mt-7 space-y-2">
           <Text className="text-base text-gray-100 font-pmedium">
-            Subir Modelo
+            Subir video
           </Text>
 
           <TouchableOpacity onPress={() => openPicker("video")}>
@@ -162,9 +160,9 @@ const Create = () => {
         </View>
 
         <FormField
-          title="descripcion"
+          title="Descripcion"
           value={form.description}
-          placeholder="The AI description of your video...."
+          placeholder="Agrega la descripcion de tu Mueble..."
           handleChangeText={(e) => setForm({ ...form, description: e })}
           otherStyles="mt-7"
         />
